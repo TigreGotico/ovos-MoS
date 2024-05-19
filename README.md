@@ -1,8 +1,10 @@
 # MoS - Mixture Of Solvers
 
-using OpenVoiceOS solver plugins we implement 3 strategies to combine solvers before deciding the final answer
+using [OpenVoiceOS solver plugins](https://openvoiceos.github.io/ovos-technical-manual/solvers) we implement 3 strategies to combine solvers before deciding the final answer
 
-A solver may be [a LLM](https://github.com/OpenVoiceOS/ovos-solver-plugin-openai-persona), a [HiveMind connection](https://jarbashivemind.github.io/HiveMind-community-docs), or [any other chatbot](https://openvoiceos.github.io/ovos-technical-manual/persona_server), documentation [here](https://openvoiceos.github.io/ovos-technical-manual/solvers)
+A solver may be [a LLM](https://github.com/OpenVoiceOS/ovos-solver-plugin-openai-persona), a [HiveMind connection](https://github.com/JarbasHiveMind/ovos-solver-hivemind-plugin/), or [any other chatbot](https://openvoiceos.github.io/ovos-technical-manual/persona_server)
+
+Each MoS strategy is also implemented as a individual solver plugin, and can be used with any application built around OVOS solvers
 
 ![img.png](img.png)
 
