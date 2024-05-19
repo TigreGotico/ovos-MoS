@@ -6,8 +6,11 @@ A solver may be [a LLM](https://github.com/OpenVoiceOS/ovos-solver-plugin-openai
 
 ![img.png](img.png)
 
+> NOTE: MoS can be used recursively, you can use a full MoS in place of any individual solver from this scheme. Such as a Democracy of Kings, or a Duopoly of Democracies
+
 ![img_6.png](img_6.png)
 
 ![img_3.png](img_3.png)
 
 ![img_4.png](img_4.png)
+
