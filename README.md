@@ -1,3 +1,5 @@
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/TigreGotico/ovos-MoS)
+
 # MoS - Mixture Of Solvers
 
 Using [OpenVoiceOS solver plugins](https://openvoiceos.github.io/ovos-technical-manual/solvers), we implement three
