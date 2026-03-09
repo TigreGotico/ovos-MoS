@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ovos-MoS"
+dynamic = ["version"]
+description = "Mixture of Solvers framework for OpenVoiceOS"
+readme = "README.md"
+license = "MIT"
+authors = [{name = "jarbasAI", email = "jarbasai@mailfence.com"}]
+requires-python = ">=3.9"
+dependencies = [
+    "ovos-plugin-manager>=0.1.0,<3.0.0",
+    "ovos-utils>=0.1.0,<1.0.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/TigreGotico/ovos_MoS"
+Repository = "https://github.com/TigreGotico/ovos_MoS"
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+include = ["ovos_MoS*"]
+
+[tool.setuptools.dynamic]
+version = {attr = "ovos_MoS.version.__version__"}

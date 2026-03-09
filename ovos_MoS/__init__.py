@@ -1,7 +1,6 @@
 import abc
 from typing import Optional, List, Dict, Any
 
-from ovos_gguf_solver import GGUFSolver
 from ovos_utils.log import LOG
 
 from ovos_plugin_manager.templates.language import LanguageTranslator, LanguageDetector
