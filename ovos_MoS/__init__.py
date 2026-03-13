@@ -1,11 +1,19 @@
 import abc
+import warnings
 from typing import Optional, List, Dict, Any
 
-from ovos_gguf_solver import GGUFSolver
 from ovos_utils.log import LOG
 
 from ovos_plugin_manager.templates.language import LanguageTranslator, LanguageDetector
 from ovos_plugin_manager.templates.solvers import AbstractSolver, MultipleChoiceSolver, QuestionSolver
+
+warnings.warn(
+    "ovos_MoS legacy classes (QuestionSolver/MultipleChoiceSolver-based) are "
+    "deprecated and will be removed in ovos-MoS 1.0. "
+    "Use ovos_MoS.agents (ChatEngine-based) instead.",
+    DeprecationWarning,
+    stacklevel=2,
+)
 
 
 class AbstractMoS(QuestionSolver):
@@ -155,7 +163,7 @@ class AbstractDuopolyMoS(AbstractMoS):
             enable_cache (bool): Flag to enable caching.
             internal_lang (Optional[str]): Internal language code. Defaults to None.
         """
-        workers = workers or self.founders
+        workers = workers or founders
         super().__init__(workers, config, translator, detector, priority,
                          enable_tx, enable_cache, internal_lang,
                          *args, **kwargs)
@@ -446,7 +454,6 @@ class ReRankerDuopolyMoS(AbstractDuopolyMoS):
         Returns:
             str: The refined answer after discussion.
         """
-        answers = self.gather_responses(query, lang=lang, units=units)
         # discuss
         discussion = []
         for i in range(self.config.get("discussion_rounds", 3)):
@@ -462,13 +469,13 @@ class ReRankerDuopolyMoS(AbstractDuopolyMoS):
         # select final answer
         prompt = f"{self.system}\n\nDiscussion:\n" + "\n".join(discussion)
         # generate final answer
-        answers = []
+        candidates = []
         for founder in self.founders:
             assert isinstance(founder, QuestionSolver)
             ans = founder.get_spoken_answer(prompt, lang=lang, units=units)
-            answers.append(ans)
+            candidates.append(ans)
             LOG.debug(f"founder {founder} says: {ans}")
-        return self.president.select_answer(query, lang=lang)
+        return self.president.select_answer(query, candidates, lang=lang)
 
 
 ##########################
@@ -578,7 +585,6 @@ class GenerativeDuopolyMoS(AbstractDuopolyMoS):
         Returns:
             str: The refined answer after discussion.
         """
-        answers = self.gather_responses(query, lang=lang, units=units)
         # discuss
         discussion = []
         for i in range(self.config.get("discussion_rounds", 3)):

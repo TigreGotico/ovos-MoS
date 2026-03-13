@@ -1,0 +1,44 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ovos-MoS"
+dynamic = ["version"]
+description = "Mixture of Solvers framework for OpenVoiceOS"
+readme = "README.md"
+license = "MIT"
+authors = [{name = "jarbasAI", email = "jarbasai@mailfence.com"}]
+requires-python = ">=3.9"
+dependencies = [
+    "ovos-plugin-manager>=0.1.0,<3.0.0",
+    "ovos-utils>=0.1.0,<1.0.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/TigreGotico/ovos_MoS"
+Repository = "https://github.com/TigreGotico/ovos_MoS"
+
+[project.optional-dependencies]
+test = ["pytest"]
+
+[project.entry-points."opm.agents.chat"]
+ovos-mos-king-reranker = "ovos_MoS.factory:ReRankerKingMoSPlugin"
+ovos-mos-king-generative = "ovos_MoS.factory:GenerativeKingMoSPlugin"
+ovos-mos-democracy = "ovos_MoS.factory:DemocracyMoSPlugin"
+ovos-mos-duopoly-reranker = "ovos_MoS.factory:ReRankerDuopolyMoSPlugin"
+ovos-mos-duopoly-generative = "ovos_MoS.factory:GenerativeDuopolyMoSPlugin"
+ovos-mos-tournament = "ovos_MoS.factory:TournamentMoSPlugin"
+ovos-mos-cascade = "ovos_MoS.factory:CascadeMoSPlugin"
+ovos-mos-jury = "ovos_MoS.factory:JuryMoSPlugin"
+ovos-mos-chain = "ovos_MoS.factory:ChainMoSPlugin"
+ovos-mos-committee = "ovos_MoS.factory:CommitteeMoSPlugin"
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+include = ["ovos_MoS*"]
+
+[tool.setuptools.dynamic]
+version = {attr = "ovos_MoS.version.__version__"}
