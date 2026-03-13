@@ -19,6 +19,21 @@ dependencies = [
 Homepage = "https://github.com/TigreGotico/ovos_MoS"
 Repository = "https://github.com/TigreGotico/ovos_MoS"
 
+[project.optional-dependencies]
+test = ["pytest"]
+
+[project.entry-points."opm.agents.chat"]
+ovos-mos-king-reranker = "ovos_MoS.factory:ReRankerKingMoSPlugin"
+ovos-mos-king-generative = "ovos_MoS.factory:GenerativeKingMoSPlugin"
+ovos-mos-democracy = "ovos_MoS.factory:DemocracyMoSPlugin"
+ovos-mos-duopoly-reranker = "ovos_MoS.factory:ReRankerDuopolyMoSPlugin"
+ovos-mos-duopoly-generative = "ovos_MoS.factory:GenerativeDuopolyMoSPlugin"
+ovos-mos-tournament = "ovos_MoS.factory:TournamentMoSPlugin"
+ovos-mos-cascade = "ovos_MoS.factory:CascadeMoSPlugin"
+ovos-mos-jury = "ovos_MoS.factory:JuryMoSPlugin"
+ovos-mos-chain = "ovos_MoS.factory:ChainMoSPlugin"
+ovos-mos-committee = "ovos_MoS.factory:CommitteeMoSPlugin"
+
 [tool.setuptools]
 include-package-data = true
 

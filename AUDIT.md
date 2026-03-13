@@ -1,4 +1,3 @@
-Last Edit: Gemini CLI - 2026-03-08 - Motive: Initial audit for AGENTS.md compliance.
 
 # ovos-MoS — Audit Report
 
