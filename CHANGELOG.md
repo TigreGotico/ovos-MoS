@@ -8,8 +8,13 @@
 
 - :tada: [\#1](https://github.com/TigreGotico/ovos-MoS/pull/1) ([JarbasAl](https://github.com/JarbasAl))
 
+**Closed issues:**
+
+- AbstractDuopolyMoS.\_\_init\_\_ reads self.founders before it is assigned \(AttributeError when workers is None\) [\#10](https://github.com/TigreGotico/ovos-MoS/issues/10)
+
 **Merged pull requests:**
 
+- fix: use local founders param before self.founders is assigned [\#11](https://github.com/TigreGotico/ovos-MoS/pull/11) ([JarbasAl](https://github.com/JarbasAl))
 - Configure Renovate [\#3](https://github.com/TigreGotico/ovos-MoS/pull/3) ([renovate[bot]](https://github.com/apps/renovate))
 - 🎉 [\#2](https://github.com/TigreGotico/ovos-MoS/pull/2) ([JarbasAl](https://github.com/JarbasAl))
 
