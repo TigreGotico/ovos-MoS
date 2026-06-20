@@ -155,7 +155,7 @@ class AbstractDuopolyMoS(AbstractMoS):
             enable_cache (bool): Flag to enable caching.
             internal_lang (Optional[str]): Internal language code. Defaults to None.
         """
-        workers = workers or self.founders
+        workers = workers or founders
         super().__init__(workers, config, translator, detector, priority,
                          enable_tx, enable_cache, internal_lang,
                          *args, **kwargs)
