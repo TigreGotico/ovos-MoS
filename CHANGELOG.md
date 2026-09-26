@@ -14,6 +14,7 @@
 
 **Merged pull requests:**
 
+- fix\(deps\): raise the ovos-plugin-manager floor above the pkg\_resources import [\#16](https://github.com/TigreGotico/ovos-MoS/pull/16) ([openvoiceos-bot](https://github.com/openvoiceos-bot))
 - ci: the build test calls the shared workflow instead of pinning Python 3.8 [\#14](https://github.com/TigreGotico/ovos-MoS/pull/14) ([openvoiceos-bot](https://github.com/openvoiceos-bot))
 - fix: use local founders param before self.founders is assigned [\#11](https://github.com/TigreGotico/ovos-MoS/pull/11) ([JarbasAl](https://github.com/JarbasAl))
 - Configure Renovate [\#3](https://github.com/TigreGotico/ovos-MoS/pull/3) ([renovate[bot]](https://github.com/apps/renovate))
